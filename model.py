@@ -1,10 +1,18 @@
-import codecademylib3_seaborn
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.dataset import load_breast_cancer
+from sklearn.metrics import mean_squared_error, r2_score
+import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-breast_cancer_data = load_breast_cancer()
+# the dataset with two classes: malignant (cancerous), benign (non-cancerous) tumors
+breast_cancer_data = load_breast_cancer() 
+breast_cancer_data.keys()
+breast_cancer_data.shape
+print(breast_cancer_data.feature_names)
+print(breast_cancer_data.DESR)
 
 training_data, validation_data, training_labels, validation_labels = train_test_split(
   breast_cancer_data.data,
@@ -27,6 +35,8 @@ plt.ylabel("Validation Accuracy")
 plt.show()
 
 # overfitting means relying too much on training data
+#underfitting not relying enough on the training data
+# 80% data in training set 20% validation set
 
 # print(breast_cancer_data.feature_names)
 
