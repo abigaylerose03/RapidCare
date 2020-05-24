@@ -2,8 +2,10 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 
+text = ""
 app=Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
+
 
 @app.route('/')
 def home():
@@ -15,8 +17,14 @@ def predict():
 	final_features = [np.array(int_features)]
 	prediction = model.predict(final_features)
 	output = round(prediction[0], 2)
+	if output == 1:
+		text = "maligant"
+	elif output == 0:
+		text = "benign"
+	else:
+		return "error!"
 
-	return render_template('index.html', prediction_text='Based on this information, the tumors should be {}'.format(output))
+	return render_template('index.html', prediction_text='Based on this information, the tumors should be ' + text)
 
 @app.route('/results', methods=['POST'])
 def results():

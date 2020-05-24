@@ -1,0 +1,13 @@
+body {
+	color: red;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.main h1 {
+	font-size: 200px;
+}
+
