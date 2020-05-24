@@ -76,7 +76,7 @@ logisticRegressor.fit(X_train, Y_train)
 pickle.dump(logisticRegressor, open('model.pkl', 'wb')) # wb means written in binary just a reminder lol
 
 model = pickle.load(open('model.pkl','rb'))
-print(model.predict([[4, 300, 500, 235, 152, 125, 6, 8, 9, 10, 11, 12]])) # 0 means bengign and 1 means malignant
+print(model.predict([[0.23, 0.23, 0.235, 0.25, 0.235, -0.32, 0,23, -0.32, 10, 11, 12]])) # 0 means bengign and 1 means malignant
 
 predictions = logisticRegressor.predict(X_test)
 score = logisticRegressor.score(X_test, Y_test)

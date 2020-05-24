@@ -1,7 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>RapidCare</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>RapidCare</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+	</head>
 
-</head>
+	<body>
+		<div class="main">
+			<h1>Rapid Care</h1>
+
+			<form action="{{url_for('predict')}}" method="post">
+				<input type="text" name="mean radius" 
+				placeholder="mean radius" required="required" />
+
+				<input type="text" name="mean texture" 
+				placeholder="mean texture" required="required" />
+
+					<input type="text" name="mean smoothness" 
+				placeholder="mean smoothness" required="required" />
+
+					<input type="text" name="mean compactness" 
+				placeholder="mean compactness" required="required" />
+
+					<input type="text" name="mean symmetry" 
+				placeholder="mean symmetry" required="required" />
+
+					<input type="text" name="mean fractal dimension" 
+				placeholder="mean fractal dimension" required="required" />
+
+					<input type="text" name="radius error" 
+				placeholder="radius error" required="required" />
+
+					<input type="text" name="texture error" 
+				placeholder="texture error" required="required" />
+
+					<input type="text" name="smoothness error" 
+				placeholder="smoothness error" required="required" />
+
+					<input type="text" name="compactness error" 
+				placeholder="compactness error" required="required" />
+
+					<input type="text" name="symmetry error" 
+				placeholder="symmetry error" required="required" />
+
+					<input type="text" name="fractal dimension error" 
+				placeholder="fracal dimension error" required="required" />
+
+				<button type="submit" class="btn">test</button>
+
+			</form>
+			<br>
+			<br>
+			{{prediction_text}}
+	    </div>
+
+	</body>
+</html>
+<!-- 
+mean radius', 'mean texture', 'mean smoothness', 'mean compactness',
+       'mean symmetry', 'mean fractal dimension', 'radius error',
+       'texture error', 'smoothness error', 'compactness error',
+       'symmetry error', 'fractal dimension error'],
+      dtype='object') -->
