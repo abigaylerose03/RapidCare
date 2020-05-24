@@ -18,9 +18,9 @@ def predict():
 	prediction = model.predict(final_features)
 	output = round(prediction[0], 2)
 	if output == 1:
-		text = "maligant"
-	elif output == 0:
 		text = "benign"
+	elif output == 0:
+		text = "malignant"
 	else:
 		return "error!"
 

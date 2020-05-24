@@ -32,7 +32,7 @@ bc_dataset = pd.DataFrame(breast_cancer_data.data)
 print(bc_dataset.shape) # (569, 30) which means 569 rows and 30 attributes
 bc_dataset.columns = breast_cancer_data.feature_names # set columns of dataframe =  features like radius, texture, perimeter, etc
 print(breast_cancer_data.feature_names) # the features: radius, texture perimester, smoothness, concavity, etc
-print(breast_cancer_data.DESCR) # the description of the breast cancer wisconsin dataset\
+print(breast_cancer_data.DESCR) # the description of the breast cancer wisconsin dataset
 print(bc_dataset.head())
 print(bc_dataset.info())
 print(breast_cancer_data.target_names)
@@ -76,7 +76,7 @@ logisticRegressor.fit(X_train, Y_train)
 pickle.dump(logisticRegressor, open('model.pkl', 'wb')) # wb means written in binary just a reminder lol
 
 model = pickle.load(open('model.pkl','rb'))
-print(model.predict([[0.23, 0.23, 0.235, 0.25, 0.235, -0.32, 0,23, -0.32, 10, 11, 12]])) # 0 means bengign and 1 means malignant
+print(model.predict([[0.23, 0.23, 0.235, 0.25, 0.235, -0.32, 0,23, -0.32, 10, 11, 12]])) # malignant = 0 bengign = 1
 
 predictions = logisticRegressor.predict(X_test)
 score = logisticRegressor.score(X_test, Y_test)
