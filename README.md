@@ -1,1 +1,2 @@
 # RapidCare
+### How to run
