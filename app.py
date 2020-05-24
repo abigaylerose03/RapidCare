@@ -24,7 +24,7 @@ def predict():
 	else:
 		return "error!"
 
-	return render_template('index.html', prediction_text='Based on this information, the tumors should be ' + text)
+	return render_template('index.html', prediction_text='Based on this information, the tumor(s) should be ' + text)
 
 @app.route('/results', methods=['POST'])
 def results():
