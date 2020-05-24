@@ -10,14 +10,43 @@ body {
 
 .main h1 {
 	font-family: 'Montserrat', sans-serif;
-	letter-spacing:1.4px;
+	letter-spacing: 1.4px;
 	font-size: 33px;
 	color: gold;
 }
 
+.main .info {
+	position: relative;
+	bottom: 330px;
+	right: 50px;
+	font-size: 16px;
+	float: right;
+	font-family: 'Roboto', sans-serif;
+	color: grey;
+
+}
+
+.main .info a {
+	font-weight: bold;
+	text-decoration: none;
+
+}
+
+.main .predict {
+	position: relative;
+	left: 200px;
+	display: block;
+	letter-spacing:1.4px;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #fff;
+
+}
+
 .main form {
 	position: relative;
-	left: 500px;
+	left: 620px;
 	display: flex;
 	flex-direction: column;
 		
